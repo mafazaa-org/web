@@ -34,17 +34,6 @@ body {
   background: var(--bright);
 }
 
-button {
-  width: fit-content;
-  height: fit-content;
-  padding: 15px 30px;
-  margin: 20px auto;
-  display: flex;
-  background-color: var(--primary-color);
-  border-width: 0;
-  border-radius: var(--border-radius);
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -55,3 +44,13 @@ a {
     color-scheme: dark;
   }
 } */
+.hero__section {
+  background-image: url("../assets/heroSection.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
+  object-fit: contain;
+  background-color: #040e3052;
+}

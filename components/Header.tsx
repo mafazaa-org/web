@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Logo from "@/public/logo/svg/logo_main.svg";
+import Logo from "@/public/logo/svg/logo_dark.svg";
 import facebook from "@/assets/facebook.svg";
 import whatsapp from "@/assets/whatsapp.svg";
 import youtube from "@/assets/youtube.svg";
@@ -8,26 +8,26 @@ import mail from "@/assets/mail.svg";
 import Link from "next/link";
 function Header() {
   return (
-    <header className="flex justify-between items-center px-48 -mt-8">
+    <header className="flex justify-between items-center px-48 -mt-8 ">
       <ul className="flex items-center gap-6">
         <li>
           <Link href="/">
-            <Image src={mail} alt="mail" width={20} height={20} />
+            <Image src={mail} alt="mail" width={27} height={27} />
           </Link>
         </li>
         <li>
           <Link href="/">
-            <Image src={youtube} alt="youtube" width={20} height={20} />
+            <Image src={youtube} alt="youtube" width={27} height={27} />
           </Link>
         </li>
         <li>
           <Link href="/">
-            <Image src={facebook} alt="facebook" width={20} height={20} />
+            <Image src={facebook} alt="facebook" width={27} height={27} />
           </Link>
         </li>
         <li>
           <Link href="/">
-            <Image src={whatsapp} alt="whatsapp" width={20} height={20} />
+            <Image src={whatsapp} alt="whatsapp" width={27} height={27} />
           </Link>
         </li>
       </ul>
@@ -38,7 +38,7 @@ function Header() {
         height={200}
         className="object-contain "
       />
-      <ul className="flex items-center gap-6">
+      <ul className="flex items-center gap-6 text-white">
         <li>
           <Link href="/">تواصل معنا</Link>
         </li>
