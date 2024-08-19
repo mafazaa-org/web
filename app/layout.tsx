@@ -5,18 +5,19 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "مفازا - الصفحة الرئيسية",
-	description: "مفازا - الصفحة الرئيسية",
+  title: "مفازا - الصفحة الرئيسية",
+  description:
+    "موقع مفازا - منصة لحجب المواقع الإباحية وتعزيز التصفح الآمن على الإنترنت",
 };
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<html lang="ar">
-			<body className={inter.className}>{children}</body>
-		</html>
-	);
+  return (
+    <html lang="ar">
+      <body className={inter.className}>{children}</body>
+    </html>
+  );
 }
