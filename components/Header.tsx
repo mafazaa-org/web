@@ -1,53 +1,49 @@
 import React from "react";
 import Image from "next/image";
-import Logo from "@/public/logo/svg/logo_dark.svg";
-import facebook from "@/assets/facebook.svg";
-import whatsapp from "@/assets/whatsapp.svg";
-import youtube from "@/assets/youtube.svg";
-import mail from "@/assets/mail.svg";
 import Link from "next/link";
-function Header() {
+
+type NavLink = {
+  href: string;
+  label: string;
+};
+
+type SocialLink = {
+  href: string;
+  src: string;
+  alt: string;
+};
+
+type HeaderProps = {
+  logoSrc: string;
+  navLinks: NavLink[];
+  socialLinks: SocialLink[];
+};
+
+function Header({ logoSrc, navLinks, socialLinks }: HeaderProps) {
   return (
-    <header className="flex justify-between items-center px-48 -mt-8 ">
-      <ul className="flex items-center gap-6">
-        <li>
-          <Link href="/">
-            <Image src={mail} alt="mail" width={27} height={27} />
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
-            <Image src={youtube} alt="youtube" width={27} height={27} />
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
-            <Image src={facebook} alt="facebook" width={27} height={27} />
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
-            <Image src={whatsapp} alt="whatsapp" width={27} height={27} />
-          </Link>
-        </li>
+    <header className="flex justify-between items-center px-48 -mt-8">
+      <ul className="flex items-center gap-6 text-white">
+        {navLinks.map((link, index) => (
+          <li key={index}>
+            <Link href={link.href}>{link.label}</Link>
+          </li>
+        ))}
       </ul>
       <Image
-        src={Logo}
+        src={logoSrc}
         alt="logo"
         width={200}
         height={200}
-        className="object-contain "
+        className="object-contain"
       />
-      <ul className="flex items-center gap-6 text-white">
-        <li>
-          <Link href="/">تواصل معنا</Link>
-        </li>
-        <li>
-          <Link href="/">ساهم معنا</Link>
-        </li>
-        <li>
-          <Link href="/">مشاريعنا</Link>
-        </li>
+      <ul className="flex items-center gap-6">
+        {socialLinks.map((social, index) => (
+          <li key={index}>
+            <Link href={social.href}>
+              <Image src={social.src} alt={social.alt} width={27} height={27} />
+            </Link>
+          </li>
+        ))}
       </ul>
     </header>
   );
