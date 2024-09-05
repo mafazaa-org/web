@@ -1,0 +1,53 @@
+import { SectionProps } from "@/components/Section";
+import sideSectionImage from "@/assets/sideSection.png";
+
+import { SideSectionProps } from "@/components/SideSection";
+import { CenterSectionProps } from "@/components/CenterSection";
+
+const section1: CenterSectionProps = {
+	backgroundImage: "bg-[url(../assets/protect.png)]",
+	textColor: "text-bright-one",
+	heading: "احمي أطفالك من المحتوى الإباحي",
+	subheading:
+		"الكثير من الأطفال يكتشفون المواقع الإباحية عن طريق الصدفة أو الخطأ! لا تدع هذا يحدث!",
+	buttons: [
+		{
+			type: "fill",
+			text: "سأحمي أطفالي",
+			backgroundOrBorderColor: "bg-accent-color",
+			textColor: "text-bright-one",
+			link: "https://ainaa.mafazaa.com",
+		},
+	],
+};
+
+const section2: SideSectionProps = {
+	imageSrc: sideSectionImage,
+	title: "اغرس في أولادك الدين القويم",
+	description:
+		"وفر لأطفالك كرتون إسلامي هادف يرسخ في قلوبهم و عقيدتهم و مبادئهم و دينهم  و يربيهم تربية حسنة إن شاء الله",
+	textColor: "text-dark-one",
+	buttons: [
+		{
+			type: "fill",
+			text: "أرني هذا المحتوى",
+			backgroundOrBorderColor: "bg-dark-one",
+			textColor: "text-bright-one",
+			link: "https://nabataa.mafazaa.com",
+		},
+	],
+	reverse: true,
+};
+
+const homeData: SectionProps[] = [
+	{
+		type: "center",
+		payload: section1,
+	},
+	{
+		type: "side",
+		payload: section2,
+	},
+];
+
+export default homeData;
