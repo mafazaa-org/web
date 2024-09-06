@@ -10,10 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
 	title: "مفازا - الصفحة الرئيسية",
 	description:
-		"موقع مفازا - منصة لحجب المواقع الإباحية وتعزيز التصفح الآمن على الإنترنت",
-	icons: {
-		icon: "/favicon.ico", // Path relative to the public directory
-	},
+		"موقع مفازا - منصة لحجب المواقع الإباحية، توفير محتوى إسلامي للأطفال، توفير فرص عمل و تسهيل العمل للشباب، و توفير مواد علمية بجودة عالية تنافس الغرب",
 };
 
 export default function RootLayout({
