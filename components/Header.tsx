@@ -14,10 +14,14 @@ type HeaderProps = {
 	navLinks: NavLink[];
 };
 
+const sideLinksWidth = "w-52";
+
 function _Header({ logoSrc, navLinks }: HeaderProps) {
 	return (
-		<header className="flex justify-between items-center px-48 -mt-8 flex-row-reverse fixed top-0 w-full">
-			<ul className="flex items-center gap-6 text-white">
+		<header className="flex justify-between items-center px-48 -mt-8 flex-row-reverse fixed top-0 w-full z-20">
+			<ul
+				className={`flex justify-end gap-6 text-bright-one ${sideLinksWidth}`}
+			>
 				{navLinks.map((link, index) => (
 					<li key={index}>
 						<Link href={link.href}>{link.label}</Link>
@@ -33,7 +37,7 @@ function _Header({ logoSrc, navLinks }: HeaderProps) {
 					className="object-contain"
 				/>
 			</Link>
-			<ul className="flex items-center gap-6">
+			<ul className={`flex justify-start gap-6 ${sideLinksWidth}`}>
 				{globalData.socialLinks.map((social, index) => (
 					<li key={index}>
 						<Link target="_blank" {...social}>

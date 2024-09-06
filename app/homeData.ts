@@ -7,8 +7,8 @@ import { CenterSectionProps } from "@/components/CenterSection";
 const section1: CenterSectionProps = {
 	backgroundImage: "bg-[url(../assets/protect.png)]",
 	textColor: "text-bright-one",
-	heading: "احمي أطفالك من المحتوى الإباحي",
-	subheading:
+	title: "احمي أطفالك من المحتوى الإباحي",
+	description:
 		"الكثير من الأطفال يكتشفون المواقع الإباحية عن طريق الصدفة أو الخطأ! لا تدع هذا يحدث!",
 	buttons: [
 		{

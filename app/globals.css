@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root {
+/* :root {
 	--primary-color: #0d309e;
 	--secondary-color: #60148c;
 	--accent-color: #18cad3;
@@ -11,11 +11,11 @@
 	--dark-two: #1d062a;
 	--border-radius: 5px;
 }
-/* 
+
 @media (prefers-color-scheme: dark) {
 	:root {
 	}
-} */
+}
 
 * {
 	box-sizing: border-box;
@@ -39,8 +39,8 @@ a {
 	text-decoration: none;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+@media (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+	}
 } */
