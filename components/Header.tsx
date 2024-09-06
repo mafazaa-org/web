@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/public/logo/svg/logo_dark.svg";
-import globalData from "@/globalData";
+import globalData from "@/app/globalData";
 
 type NavLink = {
 	href: string;
@@ -24,7 +24,9 @@ function _Header({ logoSrc, navLinks }: HeaderProps) {
 			>
 				{navLinks.map((link, index) => (
 					<li key={index}>
-						<Link href={link.href}>{link.label}</Link>
+						<Link href={link.href} target="_blank">
+							{link.label}
+						</Link>
 					</li>
 				))}
 			</ul>

@@ -33,7 +33,7 @@ const section2: SideSectionProps = {
 			text: "أرني هذا المحتوى",
 			backgroundOrBorderColor: "bg-dark-one",
 			textColor: "text-bright-one",
-			link: "https://nabataa.mafazaa.com",
+			link: "https://youtube.com/playlist?list=PLiICC_-DcP0SsG6GfDxMkzR-uo6emprzd&feature=shared",
 		},
 	],
 	reverse: true,

@@ -1,12 +1,12 @@
-import whatsappIcon from "./assets/whatsapp.svg";
-import facebookIcon from "./assets/facebook.svg";
-import youtubeIcon from "./assets/youtube.svg";
-import mailIcon from "./assets/mail.svg";
+import whatsappIcon from "@/assets/whatsapp.svg";
+import facebookIcon from "@/assets/facebook.svg";
+import youtubeIcon from "@/assets/youtube.svg";
+import mailIcon from "@/assets/mail.svg";
 
 const globalData: globalDataType = {
 	socialLinks: [
 		{
-			href: "https://wa.me/201003816322",
+			href: "https://whatsapp.com/channel/0029VakgzRJ5kg7BkQFSJK36",
 			src: whatsappIcon,
 			alt: "whatsapp",
 		},
@@ -25,7 +25,7 @@ const globalData: globalDataType = {
 	navLinks: [
 		{ href: "/projects", label: "مشاريعنا" },
 		{
-			href: "/contact",
+			href: "https://wa.me/201003816322",
 			label: "تواصل معنا",
 		},
 	],

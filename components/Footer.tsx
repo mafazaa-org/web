@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import globalData from "@/globalData";
+import globalData from "@/app/globalData";
 import logo from "@/public/logo/svg/logo_dark.svg";
-import projectsData from "@/projectsData";
+import projectsData from "@/app/projectsData";
 
 type FooterColumn = {
 	title: string;
@@ -44,7 +44,9 @@ function _Footer({ columns }: FooterProps) {
 						<ul className="flex flex-col gap-[30px] text-xl">
 							{column.links.map((link, linkIndex) => (
 								<li key={linkIndex}>
-									<Link href={link.href}>{link.label}</Link>
+									<Link href={link.href} target="_blank">
+										{link.label}
+									</Link>
 								</li>
 							))}
 						</ul>
@@ -57,6 +59,7 @@ function _Footer({ columns }: FooterProps) {
 						تواصل معنا
 					</h3>
 					<a
+						target="_blank"
 						className="text-xl font-bold border-b border-bright-one pb-[30px]"
 						href={`mailto:${globalData.support}`}
 					>
@@ -65,7 +68,7 @@ function _Footer({ columns }: FooterProps) {
 					<ul className="flex items-center gap-[30px]">
 						{globalData.socialLinks.map((social, index) => (
 							<li key={index}>
-								<Link href={social.href}>
+								<Link href={social.href} target="_blank">
 									<Image
 										src={social.src}
 										alt={social.alt}
