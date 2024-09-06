@@ -16,7 +16,7 @@ type HeaderProps = {
 
 function _Header({ logoSrc, navLinks }: HeaderProps) {
 	return (
-		<header className="flex justify-between items-center px-48 -mt-8 flex-row-reverse">
+		<header className="flex justify-between items-center px-48 -mt-8 flex-row-reverse fixed top-0 w-full">
 			<ul className="flex items-center gap-6 text-white">
 				{navLinks.map((link, index) => (
 					<li key={index}>
