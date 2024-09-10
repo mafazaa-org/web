@@ -109,7 +109,7 @@ const footerData: FooterProps = {
       title: "مشاريعنا",
       links: projectsData.map((project) => ({
         href: `https://${project.en}.mafazaa.com`,
-        label: project.name,
+        label: project.title,
       })),
     },
   ],
