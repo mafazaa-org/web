@@ -44,3 +44,6 @@ a {
 		color-scheme: dark;
 	}
 } */
+body {
+  font-family: var(--font-cairo), sans-serif;
+}
