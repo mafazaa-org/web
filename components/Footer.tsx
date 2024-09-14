@@ -13,55 +13,21 @@ type FooterColumn = {
 export type FooterProps = { columns: FooterColumn[] };
 
 const textColor = "text-bright-one";
-const borderColor = "border-accent-color";
+const afterborder =
+  "relative after:bg-accent-color after:h-[1px] after:w-2/3 after:absolute after:bottom-0 after:right-0";
 
 function _Footer({ columns }: FooterProps) {
   return (
     <footer
-      className={`w-full bg-gradient-to-r from-dark-one to-dark-two ${textColor} ${borderColor} text-right`}
+      className={`w-full bg-gradient-to-r from-dark-one to-dark-two ${textColor} ${afterborder} text-right `}
     >
       <div
-        className={`flex flex-col lg:flex-row-reverse justify-between gap-12 p-8 lg:p-24 mx-auto max-w-7xl ${textColor}`}
+        className={`flex flex-col-reverse lg:grid grid-cols-12 gap-6 md:gap-12 lg:gap-24 px-6 md:px-10 lg:px-20 py-8 lg:py-28 ${textColor} `}
       >
-        {/* Logo Section */}
-        <div className="flex justify-center lg:justify-start mb-8 lg:mb-0">
-          <Link href={"/"}>
-            <Image
-              src={logo}
-              alt="logo"
-              width={244}
-              height={244}
-              className="w-32 h-32 lg:w-full lg:h-full object-contain"
-            />
-          </Link>
-        </div>
-
-        {/* Dynamic Columns */}
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
-          {columns.map((column, index) => (
-            <div key={index} className="flex flex-col gap-4 lg:gap-6">
-              <h3
-                className={`text-2xl lg:text-3xl font-bold border-b ${borderColor} pb-2 lg:pb-4`}
-              >
-                {column.title}
-              </h3>
-              <ul className="flex flex-col gap-2 lg:gap-4 text-lg lg:text-xl">
-                {column.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <Link href={link.href} target="_blank">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
         {/* Contact Section */}
-        <div className="flex flex-col gap-4 lg:gap-6">
+        <div className="flex flex-col lg:w-fit max-lg:w-full gap-4 lg:gap-6 col-span-3 max-lg:items-end lg:justify-center ">
           <h3
-            className={`text-2xl lg:text-3xl font-bold border-b ${borderColor} pb-2 lg:pb-4`}
+            className={`text-2xl lg:text-3xl font-bold ${afterborder} pb-2 lg:pb-4`}
           >
             تواصل معنا
           </h3>
@@ -72,7 +38,7 @@ function _Footer({ columns }: FooterProps) {
           >
             {globalData.support}
           </a>
-          <ul className="flex items-center justify-center lg:justify-start gap-4 lg:gap-6">
+          <ul className="flex items-center justify-center lg:justify-between gap-4 lg:gap-6">
             {globalData.socialLinks.map((social, index) => (
               <li key={index}>
                 <Link href={social.href} target="_blank">
@@ -87,14 +53,48 @@ function _Footer({ columns }: FooterProps) {
             ))}
           </ul>
         </div>
+
+        {/* Dynamic Columns */}
+        <div className="flex flex-col-reverse lg:flex-row-reverse gap-10 col-span-6 items-end lg:items-center lg:justify-evenly">
+          {columns.map((column, index) => (
+            <div key={index} className="flex flex-col gap-4 lg:gap-6">
+              <h3
+                className={`text-2xl lg:text-3xl font-bold ${afterborder} pb-2 lg:pb-4`}
+              >
+                {column.title}
+              </h3>
+              <ul className="flex flex-col gap-2 lg:gap-4 text-base font-bold">
+                {column.links.map((link, linkIndex) => (
+                  <li key={linkIndex}>
+                    <Link href={link.href} target="_blank">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        {/* Logo Section */}
+        <div className="flex justify-center lg:justify-end lg:-mr-16 col-span-3">
+          <Link href={"/"}>
+            <Image
+              src={logo}
+              alt="logo"
+              width={244}
+              height={244}
+              className="w-32 h-32 lg:w-full lg:h-full object-contain"
+            />
+          </Link>
+        </div>
       </div>
 
-      {/* Footer Bottom Section */}
+      {/* Footer Bottom Section
       <div className="flex justify-center items-center py-4 lg:py-5 border-t border-bright-one">
         <p className={`text-sm lg:text-xl ${textColor}`}>
           Mafazza - &copy; 2024
         </p>
-      </div>
+      </div> */}
     </footer>
   );
 }

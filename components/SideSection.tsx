@@ -25,7 +25,7 @@ function SideSection({
         reverse
           ? "flex-col lg:flex-row-reverse"
           : "flex-col-reverse lg:flex-row"
-      } max-lg:mt-0 my-12 lg:my-24  max-lg:pt-0 py-8 lg:py-16 relative 
+      } my-24 py-10 lg:py-20 relative 
           after:content-['']
           after:absolute
           after:left-1/4
@@ -36,11 +36,12 @@ function SideSection({
         after:bg-black`}
     >
       <div
-        className="flex-1 lg:w-1/2 relative lg:before:content-['']
-          lg:before:w-1/3
-          lg:before:h-1/2
+        className="max-lg:flex max-lg:items-center max-lg:justify-center flex-1 lg:w-1/2 relative before:content-['']
+          before:w-1/3
+          before:h-1/2
           before:absolute
-          before:left-1/4
+          before:left-4
+          lg:before:left-1/4
           before:-top-1/4
           before:block
         before:bg-accent-color
@@ -55,7 +56,7 @@ function SideSection({
           alt={title}
           width={400}
           height={400}
-          className="object-cover lg:rounded-lg"
+          className="object-cover  rounded-lg max-lg:w-3/4"
         />
       </div>
       <div
