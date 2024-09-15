@@ -25,7 +25,7 @@ const globalData: globalDataType = {
   navLinks: [
     { href: "/projects", label: "مشاريعنا" },
     {
-      href: "https://wa.me/201003816322",
+      href: "/contact",
       label: "تواصل معنا",
     },
     { href: "/", label: "الرئيسية" },

@@ -48,7 +48,7 @@ function SideSection({
           before:rounded-lg
           before:opacity-40
           before:-z-10
-          before:blur-[2px]
+          before:blur-[1px]
           "
       >
         <Image

@@ -1,9 +1,11 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import globalData from "@/app/globalData";
 import logo from "@/public/logo/svg/logo_dark.svg";
 import projectsData from "@/app/projectsData";
+import { usePathname } from "next/navigation";
 
 type FooterColumn = {
   title: string;
@@ -17,12 +19,23 @@ const afterborder =
   "relative after:bg-accent-color after:h-[1px] after:w-2/3 after:absolute after:bottom-0 after:right-0";
 
 function _Footer({ columns }: FooterProps) {
+  const pathname = usePathname();
+
+  const [isSpecialRoute, setIsSpecialRoute] = useState(false);
+
+  useEffect(() => {
+    setIsSpecialRoute(pathname === "/contact");
+  }, [pathname]);
   return (
     <footer
-      className={`w-full bg-gradient-to-r from-dark-one to-dark-two ${textColor} ${afterborder} text-right `}
+      className={`w-full ${
+        isSpecialRoute
+          ? "bg-[#030B27]"
+          : "bg-gradient-to-r from-dark-one to-dark-two"
+      }  ${textColor} text-right `}
     >
       <div
-        className={`flex flex-col-reverse lg:grid grid-cols-12 gap-6 md:gap-12 lg:gap-24 px-6 md:px-10 lg:px-20 py-8 lg:py-28 ${textColor} `}
+        className={`flex flex-col-reverse lg:grid grid-cols-12 gap-6 md:gap-12 lg:gap-24 px-6 md:px-10 lg:px-20 py-12 lg:py-28 ${textColor} `}
       >
         {/* Contact Section */}
         <div className="flex flex-col lg:w-fit max-lg:w-full gap-4 lg:gap-6 col-span-3 max-lg:items-end lg:justify-center ">
@@ -76,14 +89,14 @@ function _Footer({ columns }: FooterProps) {
           ))}
         </div>
         {/* Logo Section */}
-        <div className="flex justify-center lg:justify-end lg:-mr-16 col-span-3">
+        <div className="flex items-center justify-center lg:justify-center  col-span-3">
           <Link href={"/"}>
             <Image
               src={logo}
               alt="logo"
-              width={244}
-              height={244}
-              className="w-32 h-32 lg:w-full lg:h-full object-contain"
+              width={143}
+              height={67}
+              className=" object-contain"
             />
           </Link>
         </div>

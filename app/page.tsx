@@ -3,6 +3,7 @@ import Project from "@/components/Project";
 import homeData from "./homeData";
 import projectsData from "./projectsData";
 import FollowUs from "@/components/FollowUs";
+import Form from "@/components/Form";
 
 export default function Home() {
   return (
@@ -22,13 +23,14 @@ export default function Home() {
         after:bg-black"
       >
         <h1 className="font-bold text-2xl lg:text-5xl mb-6">مشاريعنا</h1>
-        <div className="grid lg:grid-cols-3 gap-8 ">
+        <div className="grid md:grid-cols-3 gap-8 ">
           {projectsData.map((element, index) => (
             <Project {...element} key={index} />
           ))}
         </div>
       </section>
       <FollowUs />
+      <Form />
     </main>
   );
 }

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/public/logo/svg/logo_dark.svg";
 import globalData from "@/app/globalData";
+import { usePathname } from "next/navigation"; // Next.js 13+ (app directory)
 
 type NavLink = {
   href: string;
@@ -17,8 +18,11 @@ type HeaderProps = {
 
 const sideLinksWidth = "w-full";
 function _Header({ logoSrc, navLinks }: HeaderProps) {
+  const pathname = usePathname();
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSpecialRoute, setIsSpecialRoute] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,12 +34,15 @@ function _Header({ logoSrc, navLinks }: HeaderProps) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  useEffect(() => {
+    setIsSpecialRoute(pathname === "/contact");
+  }, [pathname]);
 
   return (
     <header
-      className={`flex md:grid grid-cols-3 items-center justify-start md:justify-items-center px-6 py-4 md:px-10 lg:px-20  fixed top-0 w-full z-20 transition-colors duration-300 mt-0 h-20 md:h-36 md:-mt-10 ${
-        isScrolled
-          ? "bg-gradient-to-r from-dark-one to-dark-two  "
+      className={`flex md:grid grid-cols-3 items-center justify-between md:justify-items-center px-6 py-4 md:px-10 lg:px-20 fixed top-0 w-full z-20 transition-colors duration-300 h-16 md:20 lg:h-24 ${
+        isScrolled || isSpecialRoute
+          ? "bg-gradient-to-r from-dark-one to-dark-two"
           : "bg-transparent"
       }`}
     >
@@ -84,7 +91,7 @@ function _Header({ logoSrc, navLinks }: HeaderProps) {
           alt="logo"
           width={143}
           height={67}
-          className="object-contain"
+          className="max-lg:w-[67px] max-lg:h-[32px] object-contain"
         />
       </Link>
       <ul
@@ -92,9 +99,7 @@ function _Header({ logoSrc, navLinks }: HeaderProps) {
       >
         {navLinks.map((link, index) => (
           <li key={index}>
-            <Link href={link.href} target="_blank">
-              {link.label}
-            </Link>
+            <Link href={link.href}>{link.label}</Link>
           </li>
         ))}
       </ul>

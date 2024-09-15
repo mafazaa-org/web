@@ -9,7 +9,7 @@ const Project: React.FC<ProjectDataType> = ({ title, description, link }) => {
     <div className="flex flex-col items-center overflow-hidden  ">
       {/* Image Section */}
       <div className="w-full h-56 md:h-80 lg:h-96 bg-black flex items-center justify-center rounded-lg">
-        <h2 className="text-bright-one font-bold text-2xl md:text-3xl lg:text-4xl ">
+        <h2 className="text-bright-one font-bold text-2xl md:text-3xl lg:text-5xl ">
           {title}
         </h2>
       </div>

@@ -28,14 +28,14 @@ function CenterSection({
             before:z-[-5]
             `}
     >
-      <div className="text-center lg:mt-24 py-12 flex flex-col gap-4 max-lg:px-4">
+      <div className="text-center lg:mt-24 py-12 flex flex-col gap-2 lg:gap-4 max-lg:px-4">
         <h1
-          className={`text-lg sm:text-xl md:text-3xl lg:text-[64px] mb-4 lg:mb-10 font-bold`}
+          className={`text-lg sm:text-xl md:text-3xl lg:text-[64px] mb-0 lg:mb-10 font-bold`}
         >
           {title}
         </h1>
         <h4
-          className={`text-xs md:text-2xl font-medium md:font-extrabold whitespace-pre-wrap  mb-10`}
+          className={`text-xs md:text-2xl font-normal md:font-bold lg:font-extrabold whitespace-pre-wrap mb-10`}
         >
           {description}
         </h4>
