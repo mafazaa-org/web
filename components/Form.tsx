@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 
 interface FormData {
+	[key: string]: string;
 	name: string;
 	phone: string;
 	email: string;
@@ -9,7 +10,7 @@ interface FormData {
 	message: string;
 }
 
-const googleFormEntries = {
+const googleFormEntries: { [key: string]: string } = {
 	name: "363973468",
 	phone: "352758841",
 	email: "1290881859",
