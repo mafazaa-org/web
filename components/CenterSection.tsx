@@ -28,9 +28,9 @@ function CenterSection({
             before:z-[-5]
             `}
     >
-      <div className="text-center lg:mt-24 py-12 flex flex-col gap-2 lg:gap-4 max-lg:px-4">
+      <div className="text-center lg:mt-16 py-8 flex flex-col gap-2 lg:gap-4 max-lg:px-4">
         <h1
-          className={`text-lg sm:text-xl md:text-3xl lg:text-[64px] mb-0 lg:mb-10 font-bold`}
+          className={`text-lg sm:text-xl md:text-3xl lg:text-[64px] mb-0 lg:mb-8 font-bold`}
         >
           {title}
         </h1>

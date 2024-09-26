@@ -25,7 +25,7 @@ function SideSection({
         reverse
           ? "flex-col lg:flex-row-reverse"
           : "flex-col-reverse lg:flex-row"
-      } my-24 py-10 lg:py-20 relative 
+      } my-16 py-10 lg:py-20 relative 
           after:content-['']
           after:absolute
           after:left-1/4
@@ -60,7 +60,7 @@ function SideSection({
         />
       </div>
       <div
-        className={`flex-1 lg:w-1/2 flex flex-col items-start justify-center gap-4 px-4 lg:pr-20  ${textColor}`}
+        className={`flex-1 lg:w-1/2 flex flex-col items-start justify-center gap-4 px-4 lg:pr-28  ${textColor}`}
       >
         <h2 className={`text-xl  md:text-3xl lg:text-5xl w-4/5 font-bold mb-4`}>
           {title}
