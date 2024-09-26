@@ -68,7 +68,7 @@ const Form: React.FC = () => {
 				ساهم او اطلب مساعدة
 			</h1>
 			<p className="text-center font-medium text-base lg:text-[20px] mb-8">
-				تفضل اخي و اعرض علينا ما عندك و أمدنا جزاك الله عنا خير الجزاء
+				تفضل اخي و اعرض علينا ما عندك و أفدنا جزاك الله عنا خير الجزاء
 			</p>
 
 			<form onSubmit={handleSubmit} className="space-y-4">
