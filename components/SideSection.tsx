@@ -25,7 +25,7 @@ function SideSection({
         reverse
           ? "flex-col lg:flex-row-reverse"
           : "flex-col-reverse lg:flex-row"
-      } my-16 py-10 lg:py-20 relative 
+      } mt-20 mb-10 py-10 lg:py-20 relative 
           after:content-['']
           after:absolute
           after:left-1/4

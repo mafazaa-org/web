@@ -12,7 +12,7 @@ export default function Home() {
         <Section {...element} key={index} />
       ))}
       <section
-        className="px-4 md:px-10 lg:px-32 mt-16 py-10 relative 
+        className="px-4 md:px-10 lg:px-32 py-10 relative 
           after:content-['']
           after:absolute
           after:left-1/4
