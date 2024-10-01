@@ -11,9 +11,13 @@ function Button({
   return (
     <Link href={link}>
       <button
-        className={`${
-          type === "outline" && "bg-transparent border-[3px]"
-        } ${backgroundOrBorderColor} ${textColor} font-bold text-base py-[17.5px] px-[48px] rounded-2xl min-w-52 `}
+        className={`${backgroundOrBorderColor} ${textColor} font-bold text-base rounded-lg min-w-52 
+        ${
+          type === "outline"
+            ? "bg-transparent border-[3px] py-[14.5px] px-[45px]"
+            : "py-[17.5px] px-[48px]"
+        }
+        `}
       >
         <h4>{text}</h4>
       </button>

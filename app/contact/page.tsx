@@ -5,7 +5,7 @@ function page() {
   return (
     <div
       dir="rtl"
-      className="bg-gradient-to-r from-dark-one to-dark-two h-full w-full text-white"
+      className="bg-gradient-to-r from-dark-one to-dark-two h-full w-full text-white mt-24"
     >
       <Form />
     </div>

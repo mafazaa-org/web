@@ -40,7 +40,7 @@ function _Header({ logoSrc, navLinks }: HeaderProps) {
 
   return (
     <header
-      className={`flex md:grid grid-cols-3 items-center justify-between md:justify-items-center px-6 py-4 md:px-10 lg:px-20 fixed top-0 w-full z-20 transition-colors duration-300 h-16 md:20 lg:h-24 ${
+      className={`flex md:grid grid-cols-3 items-center justify-between md:justify-items-center px-6 py-4 md:px-12 lg:px-32 fixed top-0 w-full z-20 transition-colors duration-300 h-16 md:h-20 lg:h-24 ${
         isScrolled || isSpecialRoute
           ? "bg-gradient-to-r from-dark-one to-dark-two"
           : "bg-transparent"

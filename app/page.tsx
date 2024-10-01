@@ -6,13 +6,13 @@ import FollowUs from "@/components/FollowUs";
 import Form from "@/components/Form";
 
 export default function Home() {
-	return (
-		<main dir="rtl">
-			{homeData.map((element, index) => (
-				<Section {...element} key={index} />
-			))}
-			<section
-				className="px-4 md:px-8 lg:px-20 my-24 py-10 lg:py-20 relative 
+  return (
+    <main dir="rtl">
+      {homeData.map((element, index) => (
+        <Section {...element} key={index} />
+      ))}
+      <section
+        className="px-4 md:px-10 lg:px-32 py-10 relative 
           after:content-['']
           after:absolute
           after:left-1/4
@@ -21,19 +21,17 @@ export default function Home() {
           after:h-[0.5px]
           after:block
         after:bg-black"
-				id="projects"
-			>
-				<h1 className="font-bold text-2xl lg:text-5xl mb-6">
-					مشاريعنا
-				</h1>
-				<div className="grid md:grid-cols-3 gap-8 ">
-					{projectsData.map((element, index) => (
-						<Project {...element} key={index} />
-					))}
-				</div>
-			</section>
-			<FollowUs />
-			<Form />
-		</main>
-	);
+        id="projects"
+      >
+        <h1 className="font-bold text-2xl lg:text-5xl mb-6">مشاريعنا</h1>
+        <div className="grid md:grid-cols-3 gap-8 ">
+          {projectsData.map((element, index) => (
+            <Project {...element} key={index} />
+          ))}
+        </div>
+      </section>
+      <FollowUs />
+      <Form />
+    </main>
+  );
 }

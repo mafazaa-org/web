@@ -8,7 +8,7 @@ function FollowUs() {
   return (
     <section
       className="bg-gradient-to-r from-dark-one to-dark-two text-bright-one text-center rounded-xl
-          mx-4 md:mx-8 lg:mx-20 my-24 py-10 lg:py-20 relative 
+          mx-4 md:mx-8 lg:mx-32 my-16 py-10 relative 
           after:content-['']
           after:absolute
           after:left-1/4
@@ -29,6 +29,7 @@ function FollowUs() {
       <h1 className="mb-6 text-2xl lg:text-5xl font-bold">
         لا تدع المهم يفوتك!
       </h1>
+
       <p className="mb-16 text-base lg:text-2xl font-medium">
         تابعنا على صفحاتنا لتصلك مشاريعنا و منتجاتنا الجديدة بإذن الله
       </p>
