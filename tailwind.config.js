@@ -13,6 +13,9 @@ module.exports = {
       borderRadius: {
         rounded: "5px",
       },
+      backgroundImage: {
+        centerSectionBg: "url('/protect.png')",
+      },
       colors: {
         primary: "#0d309e",
         "primary-color": "#0d309e",
@@ -22,6 +25,7 @@ module.exports = {
         "bright-two": "#ccc",
         "dark-one": "#040e30",
         "dark-two": "#1d062a",
+        test: "#34fe41",
       },
     },
   },
