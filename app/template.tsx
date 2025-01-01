@@ -13,11 +13,14 @@ export default function RootTemplate({
 	const [loaded, setLoaded] = useState(false);
 	useEffect(() => {
 		(async () => {
+			const api_host = await (
+				await fetch("/api/public_env/api_host")
+			).json();
+
 			let res = await (
-				await fetch(
-					`${process.env.NEXT_PUBLIC_API_HOST}/global/links`,
-					{ cache: "force-cache" }
-				)
+				await fetch(`${api_host}/global/links`, {
+					cache: "force-cache",
+				})
 			).json();
 			console.log(res);
 			setLinks(res);

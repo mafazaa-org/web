@@ -14,15 +14,15 @@ export default function Home() {
 	const [loaded, setLoaded] = useState(false);
 	useEffect(() => {
 		(async () => {
+			const api_host = await (
+				await fetch("/api/public_env/api_host")
+			).json();
+
 			const res = await (
-				await fetch(
-					`${process.env.NEXT_PUBLIC_API_HOST}/global/projects`
-				)
+				await fetch(`${api_host}/global/projects`)
 			).json();
 			setProjects(res);
-			const p = await (
-				await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/global/poem`)
-			).json();
+			const p = await (await fetch(`${api_host}/global/poem`)).json();
 			setPoem(p);
 			setLoaded(true);
 		})();

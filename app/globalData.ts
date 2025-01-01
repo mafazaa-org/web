@@ -4,6 +4,7 @@ export const navLinks: { href: string; label: string }[] = [
 		href: "/contact",
 		label: "تواصل معنا",
 	},
-	{ href: "/", label: "الرئيسية" },
 	{ href: "/idea", label: "فكرة المشروع" },
+
+	{ href: "/", label: "الرئيسية" },
 ];
