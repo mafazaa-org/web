@@ -26,11 +26,14 @@ function Footer({ links }: { links: any }) {
 		(async () => {
 			setIsSpecialRoute(pathname === "/contact");
 
+			const api_host = await (
+				await fetch("/api/public_env/api_host")
+			).json();
+
 			const res = await (
-				await fetch(
-					`${process.env.NEXT_PUBLIC_API_HOST}/global/projects`,
-					{ cache: "force-cache" }
-				)
+				await fetch(`${api_host}/global/projects`, {
+					cache: "force-cache",
+				})
 			).json();
 			setProjects(res);
 
