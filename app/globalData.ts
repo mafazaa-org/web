@@ -5,4 +5,5 @@ export const navLinks: { href: string; label: string }[] = [
 		label: "تواصل معنا",
 	},
 	{ href: "/", label: "الرئيسية" },
+	{ href: "/idea", label: "فكرة المشروع" },
 ];
