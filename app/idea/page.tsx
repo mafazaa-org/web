@@ -1,6 +1,11 @@
 import Section from "@/components/Section";
 import React from "react";
 import ideaData from "./ideaData";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "مفازا - فكرة المشروع",
+};
 
 const IdeaPage = () => {
 	return (
@@ -13,7 +18,7 @@ const IdeaPage = () => {
 						textColor: "text-bright-one",
 						title: "فكرة المشروع",
 						description:
-							"بسم الله الرحمن الرحيم \n ينقسم مشروع مفازا إلى خمسة مشاريع أساسية و هي عينا سلسبيلا، نباتا حسنا، زدني علما، و قرضا حسنا، و باميلكا \n نتعرف عليها في الفقرة التالية إن شاء الله",
+							"بسم الله الرحمن الرحيم \n ينقسم مشروع مفازا إلى خمسة مشاريع أساسية و هي عينا سلسبيلا، نباتا حسنا، زدني علما، و قرضا حسنا، و باميلكا \n نتعرف عليهم في الفقرات التالية إن شاء الله",
 						buttons: [],
 					},
 					type: "center",
