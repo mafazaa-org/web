@@ -32,7 +32,7 @@ const IdeaPage = () => {
 							i % 2
 								? "bg-gradient-to-r from-dark-one to-dark-two text-bright-one"
 								: "bg-gradient-to-r from-bright-one to-bright-two text-dark-one"
-						} flex flex-col px-72 py-10 text-bright-one`}
+						} flex flex-col px-8 sm:px-16 md:px-32 lg:px-48 xl:px-72 py-10 text-bright-one`}
 					>
 						<h2 className="font-bold text-2xl">{v.name} </h2>
 						{v.explanation.map((v, i) => (
