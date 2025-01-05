@@ -9,6 +9,7 @@ export default function RootTemplate({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+<<<<<<< HEAD
   const [links, setLinks] = useState();
   const [projects, setProjects] = useState([]);
   const [loaded, setLoaded] = useState(false);
