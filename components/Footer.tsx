@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { navLinks } from "@/app/globalData";
 import logo from "@/public/logo/svg/logo_dark.svg";
 import { usePathname } from "next/navigation";
 
@@ -44,13 +43,13 @@ function Footer({ links }: { links: any }) {
 	const columns = [
 		{
 			title: "روابط مهمة",
-			links: navLinks,
+			links: links.importantLinks,
 		},
 		{
 			title: "مشاريعنا",
 			links: projects.map((project: any) => ({
 				href: `https://${project.en}.mafazaa.com`,
-				label: project.title,
+				text: project.title,
 			})),
 		},
 	];
@@ -115,13 +114,21 @@ function Footer({ links }: { links: any }) {
 									{column.title}
 								</h3>
 								<ul className="flex flex-col justify-end gap-2 lg:gap-4 text-base font-bold">
-									{column.links.map((link, linkIndex) => (
-										<li key={linkIndex}>
-											<Link href={link.href}>
-												{link.label}
-											</Link>
-										</li>
-									))}
+									{column.links.map(
+										(
+											link: {
+												href: string;
+												text: string;
+											},
+											linkIndex: number
+										) => (
+											<li key={linkIndex}>
+												<Link href={link.href}>
+													{link.text}
+												</Link>
+											</li>
+										)
+									)}
 								</ul>
 							</div>
 						))}

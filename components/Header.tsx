@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/public/logo/svg/logo_dark.svg";
-import { navLinks } from "@/app/globalData";
 import { usePathname } from "next/navigation"; // Next.js 13+ (app directory)
 
 const sideLinksWidth = "w-full";
@@ -28,6 +27,13 @@ function Header({ links }: { links: any }) {
 		setIsSpecialRoute(pathname === "/contact");
 	}, [pathname]);
 
+	const fetchedLinks = {
+		...links,
+		importantLinks: links.importantLinks.filter(
+			(v: { href: string; text: string }) =>
+				["انضم إلينا", "مشاريعنا", "فكرة المشروع"].includes(v.text)
+		),
+	};
 	return (
 		<header
 			className={`flex md:grid grid-cols-3 items-center justify-between md:justify-items-center px-6 py-4 md:px-12 lg:px-32 fixed top-0 w-full z-20 transition-colors duration-300 h-16 md:h-20 lg:h-24 ${
@@ -39,14 +45,14 @@ function Header({ links }: { links: any }) {
 			<ul
 				className={`hidden md:flex justify-start items-center gap-6 ${sideLinksWidth}`}
 			>
-				{links.socialLinks.map((social: any, index: any) => (
+				{fetchedLinks.socialLinks.map((social: any, index: any) => (
 					<li key={index}>
 						<Link target="_blank" {...social}>
 							<Image
 								{...social}
 								width={27}
 								height={27}
-								alt={social.alt}
+								alt={social.text}
 							/>
 						</Link>
 					</li>
@@ -92,24 +98,31 @@ function Header({ links }: { links: any }) {
 			<ul
 				className={`hidden md:flex justify-end items-center gap-6 text-bright-one font-bold ${sideLinksWidth}`}
 			>
-				{navLinks.map((link, index) => (
-					<li key={index}>
-						<Link href={link.href}>{link.label}</Link>
-					</li>
-				))}
+				{fetchedLinks.importantLinks.map(
+					(link: { href: string; text: string }, index: number) => (
+						<li key={index}>
+							<Link href={link.href}>{link.text}</Link>
+						</li>
+					)
+				)}
 			</ul>
 			{isMenuOpen && (
 				<ul className="md:hidden bg-gradient-to-r from-dark-one to-dark-two px-6 py-4 z-10 fixed left-0 top-0 w-full h-screen flex flex-col-reverse items-center justify-center">
-					{navLinks.map((link, index) => (
-						<li key={index} className="py-2">
-							<Link
-								href={link.href}
-								className="text-bright-one font-bold hover:text-gray-200"
-							>
-								{link.label}
-							</Link>
-						</li>
-					))}
+					{fetchedLinks.importantLinks.map(
+						(
+							link: { href: string; text: string },
+							index: number
+						) => (
+							<li key={index} className="py-2">
+								<Link
+									href={link.href}
+									className="text-bright-one font-bold hover:text-gray-200"
+								>
+									{link.text}
+								</Link>
+							</li>
+						)
+					)}
 				</ul>
 			)}
 		</header>
