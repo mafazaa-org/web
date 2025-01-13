@@ -11,6 +11,8 @@ import {
 } from "mafazaa-react-ui";
 import img1 from "@/assets/Group 1.svg";
 import img2 from "@/assets/Group 2.svg";
+import "./globals.css";
+
 export default function Home() {
   const [projects, setProjects] = useState([]);
   const links = {

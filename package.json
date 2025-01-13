@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "create-next-app": "^14.2.5",
-    "mafazaa-react-ui": "^1.1.1",
+    "mafazaa-react-ui": "^1.1.6",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",

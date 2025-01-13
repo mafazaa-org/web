@@ -1,11 +1,11 @@
-import { SectionProps } from "@/components/Section";
+// import { SectionProps } from "@/components/Section";
 import sideSectionImage from "@/assets/sideSection.png";
 import centerSectionImage from "@/assets/protect.png";
 
-import { SideSectionProps } from "@/components/SideSection";
-import { CenterSectionProps } from "@/components/CenterSection";
+// import { SideSectionProps } from "@/components/SideSection";
+// import { CenterSectionProps } from "@/components/CenterSection";
 
-export const CenterSectionData: CenterSectionProps = {
+export const CenterSectionData = {
   backgroundImage: centerSectionImage.src,
   textColor: "#f2f2f2",
   title: "احمي أطفالك من المحتوى الإباحي",
@@ -13,14 +13,14 @@ export const CenterSectionData: CenterSectionProps = {
     "الكثير من الأطفال يكتشفون المواقع الإباحية عن طريق الصدفة أو الخطأ !\nلا تدع هذا يحدث!",
   buttons: [
     {
-      type: "fill",
+      type: "fill" as "fill",
       text: "سأحمي أطفالي",
       backgroundOrBorderColor: "#18cad3",
       textColor: "#f2f2f2",
       link: "https://ainaa.mafazaa.com",
     },
     {
-      type: "outline",
+      type: "outline" as "outline",
       text: "المزيد ...",
       backgroundOrBorderColor: "",
       textColor: "#f2f2f2",
@@ -29,7 +29,7 @@ export const CenterSectionData: CenterSectionProps = {
   ],
 };
 
-export const sideSectionData: SideSectionProps = {
+export const sideSectionData = {
   imageSrc: sideSectionImage,
   title: "اغرس في أولادك الدين القويم",
   description:
@@ -37,7 +37,7 @@ export const sideSectionData: SideSectionProps = {
   textColor: "#000000",
   buttons: [
     {
-      type: "fill",
+      type: "fill" as "fill",
       text: "أرني هذا المحتوى",
       backgroundOrBorderColor: "#18cad3",
       textColor: "#f2f2f2",
@@ -47,7 +47,7 @@ export const sideSectionData: SideSectionProps = {
   reverse: true,
 };
 
-const homeData: SectionProps[] = [
+const homeData = [
   {
     type: "center",
     payload: CenterSectionData,
