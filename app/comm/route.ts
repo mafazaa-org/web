@@ -1,6 +1,7 @@
-import { NextRequest, NextResponse } from "next/server"
-import { GET } from "../join/route"
+import { NextRequest, NextResponse } from "next/server";
 
-export async GET(req: NextRequest) {
-    return NextResponse.redirect("https://chat.whatsapp.com/GpVDyjVulTgArIyEhZ75HO")
+export async function GET(req: NextRequest) {
+	return NextResponse.redirect(
+		"https://chat.whatsapp.com/GpVDyjVulTgArIyEhZ75HO"
+	);
 }
