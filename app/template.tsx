@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Header, Footer } from "mafazaa-react-ui";
 import logo from "@/public/logo/svg/logo_dark.svg";
 import "./globals.css";
+import { usePathname } from "next/navigation"; // Import usePathname
 
 type LinksTypes = {
   socialLinks: {
@@ -24,6 +25,8 @@ export default function RootTemplate({
   const [links, setLinks] = useState<LinksTypes>();
   const [projects, setProjects] = useState([]);
   const [loaded, setLoaded] = useState(false);
+  const pathname = usePathname(); // Get the current route
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -47,13 +50,17 @@ export default function RootTemplate({
 
     fetchData();
   }, []);
+  const excludeHeaderFooter = pathname === "/join";
+  console.log(links);
 
   return (
     loaded && (
       <>
-        <Header links={links} logo={logo} />
+        {!excludeHeaderFooter && <Header links={links} logo={logo} />}
         {children}
-        <Footer links={links} logo={logo} projects={projects} />
+        {!excludeHeaderFooter && (
+          <Footer links={links} logo={logo} projects={projects} />
+        )}
       </>
     )
   );

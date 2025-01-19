@@ -1,42 +1,69 @@
-import { Button } from "mafazaa-react-ui";
+"use client";
+import React from "react";
+import { Button, CenterSection } from "mafazaa-react-ui";
 import Head from "next/head";
 
-export default function page() {
+export default function Page() {
   return (
     <>
       <Head>
-        <title>Join Us</title>
+        <title>انضم إلينا</title>
         <meta
           name="description"
-          content="Join our community and connect with us!"
+          content="انضم إلى مجتمعنا وساهم في تحقيق الفائدة للجميع!"
         />
       </Head>
-      <div className="flex items-center justify-center  bg-bright-one ">
-        <div className="bg-white rounded-lg shadow-lg p-24  w-full text-center">
-          <h1 className="text-3xl font-bold text-dark-one mb-6">
-            Join Our Community
+      <div className="flex flex-col md:flex-row min-h-screen">
+        {/* Left Section for Skilled Individuals */}
+        <div
+          className="flex-1 flex flex-col items-center justify-center p-8 text-center"
+          style={{
+            background: "linear-gradient(135deg, #0d309e, #18cad3)", // Gradient for Skilled Individuals
+          }}
+        >
+          <h1 className="text-3xl font-bold mb-4" style={{ color: "#f2f2f2" }}>
+            للمحترفين وأصحاب المهارات
           </h1>
-          <p className="text-dark-two mb-6">
-            Become a part of our community and stay connected. Choose one of the
-            options below:
+          <p
+            className="text-lg mb-6"
+            style={{ color: "#ccc" }} // Subtle secondary text
+          >
+            هل أنت مطور، مصمم، أو تمتلك مهارات مميزة؟ انضم إلينا وساهم في تنفيذ
+            مشاريع هادفة تخدم مجتمعنا الإسلامي وتحدث تغييراً إيجابياً.
           </p>
-          <div className="flex justify-center items-center gap-6">
-            <Button
-              backgroundOrBorderColor="#0d309e"
-              text="Join WhatsApp Group"
-              textColor="#212121"
-              type="outline"
-              link=""
-            ></Button>
+          <Button
+            text="تعرف أكثر"
+            backgroundOrBorderColor=" #18cad3" // Gradient Button
+            textColor="#f2f2f2" // Bright One
+            fill
+            link={`/details?type=skilled`}
+          />
+        </div>
 
-            <Button
-              backgroundOrBorderColor="#60148c"
-              text="Fill the Form"
-              textColor="#212121"
-              type="outline"
-              link=""
-            ></Button>
-          </div>
+        {/* Right Section for Non-Skilled Individuals */}
+        <div
+          className="flex-1 flex flex-col items-center justify-center p-8 text-center"
+          style={{
+            background: "linear-gradient(135deg, #60148c, #0d309e)", // Gradient for Non-Skilled Individuals
+          }}
+        >
+          <h1 className="text-3xl font-bold mb-4" style={{ color: "#f2f2f2" }}>
+            للجميع مهما كانت مهاراتهم
+          </h1>
+          <p
+            className="text-lg mb-6"
+            style={{ color: "#ccc" }} // Subtle secondary text
+          >
+            ليس لديك مهارات تقنية؟ لا تقلق! يمكنك الانضمام إلينا والمساعدة في
+            دعم المشاريع والمجتمع بطرق أخرى مفيدة ومؤثرة.
+          </p>
+          <Button
+            text="تعرف أكثر"
+            backgroundOrBorderColor=" #60148c" // Gradient Button
+            textColor="#f2f2f2" // Bright One
+            fill
+            link={`/details?type=non-skilled`}
+          />
         </div>
       </div>
     </>

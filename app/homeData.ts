@@ -13,14 +13,14 @@ export const CenterSectionData = {
     "الكثير من الأطفال يكتشفون المواقع الإباحية عن طريق الصدفة أو الخطأ !\nلا تدع هذا يحدث!",
   buttons: [
     {
-      type: "fill" as "fill",
+      fill: true,
       text: "سأحمي أطفالي",
       backgroundOrBorderColor: "#18cad3",
       textColor: "#f2f2f2",
       link: "https://ainaa.mafazaa.com",
     },
     {
-      type: "outline" as "outline",
+      fill: false,
       text: "المزيد ...",
       backgroundOrBorderColor: "",
       textColor: "#f2f2f2",
@@ -37,7 +37,7 @@ export const sideSectionData = {
   textColor: "#000000",
   buttons: [
     {
-      type: "fill" as "fill",
+      fill: true,
       text: "أرني هذا المحتوى",
       backgroundOrBorderColor: "#18cad3",
       textColor: "#f2f2f2",
