@@ -17,9 +17,27 @@ type LinksTypes = {
     text: string;
   }[];
 };
+import { Header, Footer } from "mafazaa-react-ui";
+import logo from "@/public/logo/svg/logo_dark.svg";
+import "./globals.css";
+import { usePathname } from "next/navigation"; // Import usePathname
+
+type LinksTypes = {
+  socialLinks: {
+    href: string;
+    src: string;
+    text: string;
+  }[];
+  importantLinks: {
+    href: string;
+    text: string;
+  }[];
+};
 export default function RootTemplate({
   children,
+  children,
 }: Readonly<{
+  children: React.ReactNode;
   children: React.ReactNode;
 }>) {
   const [links, setLinks] = useState<LinksTypes>();

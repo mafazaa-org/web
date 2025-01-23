@@ -4,6 +4,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./app/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/mafazaa-react-ui/**/*.{js,ts,jsx,tsx}", // Your npm package components
   ],
   theme: {
     extend: {
@@ -12,6 +13,9 @@ module.exports = {
       },
       borderRadius: {
         rounded: "5px",
+      },
+      backgroundImage: {
+        centerSectionBg: "url('/protect.png')",
       },
       colors: {
         primary: "#0d309e",
@@ -22,6 +26,7 @@ module.exports = {
         "bright-two": "#ccc",
         "dark-one": "#040e30",
         "dark-two": "#1d062a",
+        test: "#34fe41",
       },
     },
   },
