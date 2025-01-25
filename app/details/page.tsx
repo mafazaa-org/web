@@ -1,7 +1,9 @@
 "use client";
-import { Button, CenterSection } from "mafazaa-react-ui";
 import Head from "next/head";
+import { CenterSection } from "mafazaa-react-ui";
 import { useSearchParams } from "next/navigation";
+import skilledImg from "@/assets/skilled.jpg";
+import nonskilledImg from "@/assets/top-view-islamic-new-year-concept.jpg";
 export default function Details() {
   const searchParams = useSearchParams();
   const type = searchParams.get("type"); // Retrieve 'type' query parameter
@@ -25,8 +27,8 @@ export default function Details() {
       <CenterSection
         {...{
           backgroundImage: isSkilled
-            ? "skilled" // Background for skilled individuals
-            : "/assets/non-skilled-bg.jpg", // Background for non-skilled individuals
+            ? skilledImg // Background for skilled individuals
+            : nonskilledImg, // Background for non-skilled individuals
           textColor: "#f2f2f2",
           title: isSkilled ? "Join Our Skilled Team" : "Join Our Community",
           description: isSkilled

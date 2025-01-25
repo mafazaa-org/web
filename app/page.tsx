@@ -14,39 +14,32 @@ import img2 from "@/assets/Group 2.svg";
 import "./globals.css";
 
 export default function Home() {
+  const [links, setLinks] = useState([]);
   const [projects, setProjects] = useState([]);
-  const links = {
-    socialLinks: [
-      {
-        href: "https://whatsapp.com/channel/0029VakgzRJ5kg7BkQFSJK36",
-        src: "https://api.mafazaa.com/icons/whatsapp.svg",
-        alt: "whatsapp",
-      },
-      {
-        href: "https://facebook.com/mafazaa.org",
-        src: "https://api.mafazaa.com/icons/facebook.svg",
-        alt: "facebook",
-      },
-      {
-        href: "https://youtube.com/@mafazaa_official",
-        src: "https://api.mafazaa.com/icons/youtube.svg",
-        alt: "youtube",
-      },
-      {
-        href: "mailto:support@mafazaa.com",
-        src: "https://api.mafazaa.com/icons/mail.svg",
-        alt: "mail",
-      },
-    ],
-    support: "support@mafazaa.com",
-  };
+  const [loaded, setLoaded] = useState(false);
+
   useEffect(() => {
-    (async () => {
-      const res = await (
-        await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/global/projects`)
-      ).json();
-      setProjects(res);
-    })();
+    const fetchData = async () => {
+      try {
+        const apiHostResponse = await fetch("./api/public_env/api_host");
+
+        const apiHost = await apiHostResponse.json();
+
+        const [projectsResponse, linksResponse] = await Promise.all([
+          fetch(`${apiHost}/global/projects`, { cache: "force-cache" }),
+          fetch(`${apiHost}/global/links`, { cache: "force-cache" }),
+        ]);
+
+        setProjects(await projectsResponse.json());
+        setLinks(await linksResponse.json());
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoaded(true);
+      }
+    };
+
+    fetchData();
   }, []);
   return (
     <main dir="rtl">
