@@ -51,7 +51,6 @@ export default function RootTemplate({
     fetchData();
   }, []);
   const excludeHeaderFooter = pathname === "/join";
-  console.log(links);
 
   return (
     loaded && (
