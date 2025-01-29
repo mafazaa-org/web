@@ -1,39 +1,66 @@
 "use client";
 
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { useEffect, useState } from "react";
+import { Header, Footer } from "mafazaa-react-ui";
+import logo from "@/public/logo/svg/logo_dark.svg";
+import "./globals.css";
+import { usePathname } from "next/navigation"; // Import usePathname
 
+type LinksTypes = {
+  socialLinks: {
+    href: string;
+    src: string;
+    text: string;
+  }[];
+  importantLinks: {
+    href: string;
+    text: string;
+  }[];
+};
 export default function RootTemplate({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	const [links, setLinks] = useState({});
-	const [loaded, setLoaded] = useState(false);
-	useEffect(() => {
-		(async () => {
-			const api_host = await (
-				await fetch("/api/public_env/api_host")
-			).json();
+  const [links, setLinks] = useState<LinksTypes>();
+  const [projects, setProjects] = useState([]);
+  const [loaded, setLoaded] = useState(false);
+  const pathname = usePathname(); // Get the current route
 
-			let res = await (
-				await fetch(`${api_host}/global/links`, {
-					cache: "force-cache",
-				})
-			).json();
-			console.log(res);
-			setLinks(res);
-			setLoaded(true);
-		})();
-	}, []);
-	return (
-		loaded && (
-			<>
-				<Header links={links} />
-				{children}
-				<Footer links={links} />
-			</>
-		)
-	);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const apiHostResponse = await fetch("./api/public_env/api_host");
+
+        const apiHost = await apiHostResponse.json();
+
+        const [projectsResponse, linksResponse] = await Promise.all([
+          fetch(`${apiHost}/global/projects`, { cache: "force-cache" }),
+          fetch(`${apiHost}/global/links`, { cache: "force-cache" }),
+        ]);
+
+        setProjects(await projectsResponse.json());
+        setLinks(await linksResponse.json());
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoaded(true);
+      }
+    };
+
+    fetchData();
+  }, []);
+  const excludeHeaderFooter = pathname === "/join";
+
+  return (
+    loaded && (
+      <>
+        {!excludeHeaderFooter && <Header links={links} logo={logo} />}
+        {children}
+        {!excludeHeaderFooter && (
+          <Footer links={links} logo={logo} projects={projects} />
+        )}
+      </>
+    )
+  );
 }
