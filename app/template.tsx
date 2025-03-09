@@ -30,17 +30,12 @@ export default function RootTemplate({
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const apiHostResponse = await fetch(
-					"./api/public_env/api_host"
-				);
+				
 
-				const apiHost = await apiHostResponse.json();
 
 				const [projectsResponse, linksResponse] = await Promise.all([
-					fetch(`${apiHost}/global/projects`, {
-						cache: "force-cache",
-					}),
-					fetch(`${apiHost}/global/links`, { cache: "force-cache" }),
+					fetch(`${process.env.NEXT_PUBLIC_API_HOST}/global/projects`),
+					fetch(`${process.env.NEXT_PUBLIC_API_HOST}/global/links`),
 				]);
 
 				setProjects(await projectsResponse.json());
