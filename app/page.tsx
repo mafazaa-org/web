@@ -2,16 +2,11 @@
 
 import { CenterSectionData, sideSectionData } from "./homeData";
 import { useEffect, useState } from "react";
-import {
-	Form,
-	FollowUs,
-	Project,
-	CenterSection,
-	SideSection,
-} from "mafazaa-react-ui";
+import { Form, FollowUs, CenterSection, SideSection } from "mafazaa-react-ui";
 import img1 from "@/assets/Group 1.svg";
 import img2 from "@/assets/Group 2.svg";
 import "./globals.css";
+import Project from "@/components/Project";
 
 export default function Home() {
 	const [links, setLinks] = useState([]);
