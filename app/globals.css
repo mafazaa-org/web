@@ -49,3 +49,22 @@ a {
 body {
   font-family: var(--font-cairo), sans-serif;
 }
+input,
+input:foucs,
+input:active,
+input:focus-visible,
+input:focus-within {
+  border: none;
+  outline: none;
+}
+/* Remove number input arrows in WebKit browsers (Chrome, Safari, Edge) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove number input arrows in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

@@ -8,10 +8,7 @@ export const metadata: Metadata = {
 
 function ContactPage() {
   return (
-    <div
-      dir="rtl"
-      className="bg-gradient-to-r from-dark-one to-dark-two h-full w-full text-white mt-24"
-    >
+    <div dir="rtl" className=" h-full w-full  mt-24">
       <Form />
     </div>
   );
