@@ -7,59 +7,56 @@ import "./globals.css";
 import { usePathname } from "next/navigation"; // Import usePathname
 
 type LinksTypes = {
-	socialLinks: {
-		href: string;
-		src: string;
-		text: string;
-	}[];
-	importantLinks: {
-		href: string;
-		text: string;
-	}[];
+  socialLinks: {
+    href: string;
+    src: string;
+    text: string;
+  }[];
+  importantLinks: {
+    href: string;
+    text: string;
+  }[];
 };
 export default function RootTemplate({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	const [links, setLinks] = useState<LinksTypes>();
-	const [projects, setProjects] = useState([]);
-	const [loaded, setLoaded] = useState(false);
-	const pathname = usePathname(); // Get the current route
+  const [links, setLinks] = useState<LinksTypes>();
+  const [projects, setProjects] = useState([]);
+  const [loaded, setLoaded] = useState(false);
+  const pathname = usePathname(); // Get the current route
 
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [projectsResponse, linksResponse] = await Promise.all([
+          fetch(`${process.env.NEXT_PUBLIC_API_HOST}/global/projects`),
+          fetch(`${process.env.NEXT_PUBLIC_API_HOST}/global/links`),
+        ]);
 
+        setProjects(await projectsResponse.json());
+        setLinks(await linksResponse.json());
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoaded(true);
+      }
+    };
 
-				const [projectsResponse, linksResponse] = await Promise.all([
-					fetch(`${process.env.NEXT_PUBLIC_API_HOST}/global/projects`),
-					fetch(`${process.env.NEXT_PUBLIC_API_HOST}/global/links`),
-				]);
+    fetchData();
+  }, []);
+  const excludeHeaderFooter = pathname === "/join";
 
-				setProjects(await projectsResponse.json());
-				setLinks(await linksResponse.json());
-			} catch (error) {
-				console.error("Error fetching data:", error);
-			} finally {
-				setLoaded(true);
-			}
-		};
-
-		fetchData();
-	}, []);
-	const excludeHeaderFooter = pathname === "/join";
-
-	return (
-		loaded && (
-			<>
-				{!excludeHeaderFooter && <Header links={links} logo={logo} />}
-				{children}
-				{!excludeHeaderFooter && (
-					<Footer links={links} logo={logo} projects={projects} />
-				)}
-			</>
-		)
-	);
+  return (
+    loaded && (
+      <>
+        {!excludeHeaderFooter && <Header links={links} logo={logo} />}
+        {children}
+        {!excludeHeaderFooter && (
+          <Footer links={links} logo={logo} projects={projects} />
+        )}
+      </>
+    )
+  );
 }
