@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { CenterSection } from "mafazaa-react-ui";
-import fundImage from "@/assets/front-view-plant-growing-from-golden-coins.jpg";
+import fundImage from "@/assets/coins.jpg";
 
 const description = `مفازا هو مشروع دعوي إسلامي يهدف إلى حجب المواقع الإباحية
 و توفير محتوى هادف للأطفال و غيرها الكثير من المنتجات إن شاء الله التي تخدم الإسلام و المسلمين`;
@@ -101,56 +101,6 @@ const SupportPage = () => {
               {errors.amount && (
                 <p className="text-red-500 text-sm mt-1">{errors.amount}</p>
               )}
-            </div>
-
-            {/* Name */}
-            <div>
-              <label className="block text-gray-700 font-medium mb-1">
-                اسمك الكريم (اختياري)
-              </label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="أدخل اسمك"
-                className="w-full px-5 py-3 border border-gray-300 rounded-lg bg-gray-100 text-black 
-  font-medium transition duration-200 focus:bg-secondary-color/25 outline-none"
-              />
-            </div>
-
-            {/* Email */}
-            <div>
-              <label className="block text-gray-700 font-medium mb-1">
-                بريدك الإلكتروني (اختياري)
-              </label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="أدخل بريدك الإلكتروني"
-                className="w-full px-5 py-3 border border-gray-300 rounded-lg bg-gray-100 text-black 
-  font-medium transition duration-200 focus:bg-secondary-color/25 outline-none"
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-gray-700 font-medium mb-1">
-                رسالة (اختياري)
-              </label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="اترك رسالة"
-                className="w-full px-5 py-3 border border-gray-300 rounded-lg bg-gray-100 text-black 
-  font-medium transition duration-200 focus:bg-secondary-color/25 outline-none resize-none"
-                rows={4}
-              />
             </div>
 
             {/* Submit Button */}
