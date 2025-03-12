@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createHmac } from "crypto";
 import { redirect, RedirectType } from "next/navigation";
 
-export const MID = "MID-20177-897";
+const MID = "MID-20177-897";
 
 export async function POST(req: NextRequest) {
 	const orderId = randomUUID();
