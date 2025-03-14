@@ -11,12 +11,29 @@ const SupportUsPage = () => {
 	return (
 		<main className="min-h-screen bg-gradient-to-b from-bright-one to-gray-100 flex flex-col">
 			{/* Form Section */}
-			<section className="flex items-center justify-center md:px-6 md:py-16 lg:py-20">
-				<div className="w-full md:w-full max-w-lg bg-white p-4 md:p-10 md:rounded-3xl md:shadow-2xl border border-gray-200">
-					<h2 className="text-3xl font-bold text-center mb-4 text-gray-800">
+			<section
+				className={`py-24 min-h-screen w-full object-cover bg-no-repeat bg-cover bg-center 
+				relative overflow-hidden flex items-center justify-center z-10 before:content-[''] bg-centerSectionBg
+				before:absolute
+				before:inset-0
+				before:block
+				before:bg-black
+				before:opacity-65
+				before:z-[-5]
+      			`}
+				style={{
+					color: "text-white",
+					backgroundImage: `url(${fundImage.src})`,
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+					backgroundRepeat: "no-repeat",
+				}}
+			>
+				<div className="w-11/12 md:w-full max-w-lg bg-transparent text-white p-4 md:p-10 md:rounded-3xl md:shadow-2xl border ">
+					<h2 className="text-3xl font-bold text-center mb-4 text-white">
 						ساهم في دعم المشروع 🌟
 					</h2>
-					<p className="text-center text-gray-600 mb-6">
+					<p className="text-center text-white mb-6">
 						بارك الله فيك، يمكنك التبرع بالمبلغ الذي تريده
 					</p>
 
@@ -27,7 +44,7 @@ const SupportUsPage = () => {
 					>
 						{/* Donation Amount */}
 						<div>
-							<label className="block text-gray-700 font-medium mb-1">
+							<label className="block text-white font-medium mb-1">
 								المبلغ (جنيه مصري)
 							</label>
 							<input
