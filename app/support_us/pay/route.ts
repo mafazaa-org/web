@@ -23,6 +23,7 @@ export async function POST(req: NextRequest) {
 			process.env.NEXT_PUBLIC_HOST + "/support_us/"
 		)}&` +
 		`allowedMethods=card,bank_installments,wallet&` +
+		`defaultMethod=wallet` +
 		`failureRedirect=true&` +
 		`redirectMethod=get&` +
 		`brandColor=%23ffe600&` +
