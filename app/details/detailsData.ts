@@ -8,12 +8,12 @@ const detailsData: detailsDataType = {
 		textColor: "#f2f2f2",
 		backgroundImage: skilledImg,
 		buttons: [
-			{
-				text: "يجب أن تنضم للمجتمع أيضا",
-				backgroundOrBorderColor: "#60148c",
-				fill: true,
-				link: process.env.NEXT_PUBLIC_HOST + "/comm",
-			},
+			// {
+			// 	text: "يجب أن تنضم للمجتمع أيضا",
+			// 	backgroundOrBorderColor: "#60148c",
+			// 	fill: true,
+			// 	link: process.env.NEXT_PUBLIC_HOST + "/comm",
+			// },
 			{
 				text: "املأ الاستبيان",
 				backgroundOrBorderColor: "#18cad3",
@@ -28,12 +28,12 @@ const detailsData: detailsDataType = {
 		textColor: "#f2f2f2",
 		backgroundImage: nonskilledImg,
 		buttons: [
-			{
-				text: "اضغط هنا",
-				backgroundOrBorderColor: "#18cad3",
-				fill: true,
-				link: process.env.NEXT_PUBLIC_HOST + "/comm",
-			},
+			// {
+			// 	text: "اضغط هنا",
+			// 	backgroundOrBorderColor: "#18cad3",
+			// 	fill: true,
+			// 	link: process.env.NEXT_PUBLIC_HOST + "/comm",
+			// },
 		],
 		description: "انضم للمجتمع و ادعمنا بطرق شتى",
 	},
