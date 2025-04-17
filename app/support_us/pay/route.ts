@@ -22,12 +22,12 @@ export async function POST(req: NextRequest) {
 		`merchantRedirect=${encodeURI(
 			process.env.NEXT_PUBLIC_HOST + "/support_us/"
 		)}&` +
-		`allowedMethods=card,bank_installments,wallet&` +
+		`allowedMethods=card,wallet&` +
 		`defaultMethod=wallet` +
 		`failureRedirect=true&` +
 		`redirectMethod=get&` +
 		`brandColor=%23ffe600&` +
-		`display=en`;
+		`display=ar`;
 	console.log(url);
 	redirect(url, RedirectType.replace);
 }
