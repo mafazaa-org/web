@@ -8,9 +8,9 @@ import centerSectionImage from "@/assets/protect.png";
 export const CenterSectionData = {
   backgroundImage: centerSectionImage.src,
   textColor: "#f2f2f2",
-  title: "احمي أطفالك من المحتوى الإباحي",
+  title: "رؤية مفازا",
   description:
-    "الكثير من الأطفال يكتشفون المواقع الإباحية عن طريق الصدفة أو الخطأ !\nلا تدع هذا يحدث!",
+    "إن الله ابتعثنا لنخرج العباد من عبادة العباد إلى عبادة رب العباد،\nومن ضيق الدنيا إلى سعة الدنيا والآخرة، ومن جور الأديان إلى عدل الإسلام",
   buttons: [
     {
       fill: true,
