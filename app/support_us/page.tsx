@@ -1,80 +1,86 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { CenterSection } from "mafazaa-react-ui";
 import fundImage from "@/assets/coins.jpg";
-
-const description = `مفازا هو مشروع دعوي إسلامي يهدف إلى حجب المواقع الإباحية
-و توفير محتوى هادف للأطفال و غيرها الكثير من المنتجات إن شاء الله التي تخدم الإسلام و المسلمين`;
 
 const SupportUsPage = () => {
 	return (
-		<main className="min-h-screen bg-gradient-to-b from-bright-one to-gray-100 flex flex-col">
-			{/* Form Section */}
-			<section
-				className={`py-24 min-h-screen w-full object-cover bg-no-repeat bg-cover bg-center 
-				relative overflow-hidden flex items-center justify-center z-10 before:content-[''] bg-centerSectionBg
-				before:absolute
-				before:inset-0
-				before:block
-				before:bg-black
-				before:opacity-65
-				before:z-[-5]
-      			`}
-				style={{
-					color: "text-white",
-					backgroundImage: `url(${fundImage.src})`,
-					backgroundSize: "cover",
-					backgroundPosition: "center",
-					backgroundRepeat: "no-repeat",
-				}}
-			>
-				<div className="w-11/12 md:w-full max-w-lg bg-transparent text-white p-4 md:p-10 md:rounded-3xl md:shadow-2xl border ">
-					<h2 className="text-3xl font-bold text-center mb-4 text-white">
-						ساهم في دعم المشروع 🌟
-					</h2>
-					<p className="text-center text-white mb-6">
-						بارك الله فيك، يمكنك التبرع بالمبلغ الذي تريده
-					</p>
+		<main className="min-h-screen bg-gradient-to-br from-primary-color via-dark-one to-secondary-color">
+			<section className="relative min-h-screen w-full flex flex-col md:flex-row items-center justify-center py-20 px-4 md:px-10 lg:px-32 overflow-hidden">
+				{/* Background Pattern */}
+				<div
+					className="absolute inset-0 opacity-20"
+					style={{
+						backgroundImage: `url(${fundImage.src})`,
+						backgroundSize: "cover",
+						backgroundPosition: "center",
+						backgroundRepeat: "no-repeat",
+					}}
+				/>
+				<div className="absolute inset-0 bg-gradient-to-br from-dark-one/80 via-dark-two/70 to-dark-one/80"></div>
 
-					<form
-						action="/support_us/pay"
-						method="post"
-						className="space-y-6"
-					>
-						{/* Donation Amount */}
-						<div>
-							<label className="block text-white font-medium mb-1">
-								المبلغ (جنيه مصري)
-							</label>
-							<input
-								type="number"
-								name="amount"
-								placeholder="أدخل المبلغ"
-								className="w-full px-5 py-3 border border-gray-300 rounded-lg bg-gray-100 text-black 
-  font-medium transition duration-200 focus:bg-secondary-color/25 outline-none"
-								min="10"
-								required
-								step="any"
-							/>
-							{/* {errors.amount && (
-								<p className="text-red-500 text-sm mt-1">
-									{errors.amount}
-								</p>
-							)} */}
+				{/* Donation Form */}
+					<div className="w-full max-w-lg p-7 mx-auto mt-16">
+						<div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-10 border border-white/20 shadow-2xl">
+							<h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-bright-one">
+								ساهم في دعم المشروع 🌟
+							</h2>
+							<p className="text-center text-bright-two mb-8 text-lg">
+								بارك الله فيك، يمكنك التبرع بالمبلغ الذي تريده
+							</p>
+
+							<form
+								action="/support_us/pay"
+								method="post"
+								className="space-y-6"
+							>
+								<div>
+									<label className="block text-bright-one font-semibold mb-2 text-lg">
+										المبلغ (جنيه مصري)
+									</label>
+									<input
+										type="number"
+										name="amount"
+										placeholder="أدخل المبلغ"
+										className="w-full px-5 py-4 border-2 border-white/30 rounded-lg bg-white/20 backdrop-blur-sm text-bright-one placeholder-bright-two font-medium text-lg transition duration-200 focus:bg-white/30 focus:border-accent-color outline-none"
+										min="10"
+										required
+										step="any"
+									/>
+								</div>
+
+								<button
+									type="submit"
+									className="w-full px-8 py-4 bg-gradient-to-r from-primary-color to-secondary-color text-white rounded-lg text-xl font-bold transition duration-300 hover:scale-105 hover:shadow-2xl active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+									disabled={false}
+								>
+									ادعمنا
+								</button>
+							</form>
 						</div>
+					</div>
+				{/* Content */}
+				<div className="relative z-10 w-full max-w-4xl mx-auto p-7 text-center space-y-12">
+					{/* Quote Section */}
+					<div className="space-y-6">
+						<div className="inline-block px-6 py-2 bg-accent-color/20 border border-accent-color/50 rounded-full mb-4">
+							<p className="text-accent-color text-sm font-semibold">
+								عمر بن الخطاب رضي الله عنه
+							</p>
+						</div>
+						<blockquote className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-bright-one leading-relaxed">
+							نحن قومٌ أعزنا الله بالإسلام، فإن ابتغينا العزة في غيره أذلنا الله
+						</blockquote>
+					</div>
 
-						{/* Submit Button */}
-						<button
-							type="submit"
-							className="w-full px-6 py-3 bg-gradient-to-r from-primary to-secondary-color text-white 
-              rounded-lg text-lg font-bold transition duration-300 hover:scale-105 hover:shadow-xl 
-              active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
-							disabled={false}
-						>
-							ادعمنا 💖
-						</button>
-					</form>
+					{/* Description */}
+					<div className="max-w-2xl mx-auto">
+						<p className="text-xl md:text-2xl lg:text-3xl text-bright-two leading-relaxed">
+							هذا باب الدعم المادي مفتوح إن توسمت في هذا المشروع خيرا و رأيت فعلا أنه يعين على إعادة إحياء هذه الأمة
+						</p>
+					</div>
+
+					
 				</div>
 			</section>
 		</main>

@@ -1,74 +1,52 @@
 "use client";
 
-import { CenterSectionData, sideSectionData } from "./homeData";
-import { useEffect, useState } from "react";
-import {
-	Form,
-	FollowUs,
-	Project,
-	CenterSection,
-	SideSection,
-} from "mafazaa-react-ui";
-import img1 from "@/assets/Group 1.svg";
-import img2 from "@/assets/Group 2.svg";
+import { Form } from "mafazaa-react-ui";
+import HeroSection from "@/components/HeroSection";
+import type { HeroSectionProps } from "@/types/index";
 import "./globals.css";
 
 export default function Home() {
-	const [links, setLinks] = useState([]);
-	const [projects, setProjects] = useState([]);
-	const [loaded, setLoaded] = useState(false);
+	const heroData: HeroSectionProps = {
+		textColor: "#f2f2f2",
+		description:
+			"إن الله ابتعثنا لنخرج العباد من عبادة العباد إلى عبادة رب العباد،\nومن ضيق الدنيا إلى سعة الدنيا والآخرة، ومن جور الأديان إلى عدل الإسلام",
+		buttons: [],
+	};
 
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const [projectsResponse, linksResponse] = await Promise.all([
-					fetch(
-						`${process.env.NEXT_PUBLIC_API_HOST}/global/projects`
-					),
-					fetch(`${process.env.NEXT_PUBLIC_API_HOST}/global/links`),
-				]);
-
-				setProjects(await projectsResponse.json());
-				setLinks(await linksResponse.json());
-			} catch (error) {
-				console.error("Error fetching data:", error);
-			} finally {
-				setLoaded(true);
-			}
-		};
-
-		fetchData();
-	}, []);
 	return (
-		<main dir="rtl">
-			{/* {homeData.map((element, index) => (
-        <Section {...element} key={index} />
-      ))} */}
-			<CenterSection {...CenterSectionData} />
-			<SideSection {...sideSectionData} />
-			<section
-				className="px-4 md:px-10 lg:px-32 py-10 relative 
-          after:content-['']
-          after:absolute
-          after:left-1/4
-          after:bottom-0
-          after:w-1/2
-          after:h-[0.5px]
-          after:block
-        after:bg-black"
-				id="projects"
-			>
-				<h1 className="font-bold text-2xl lg:text-5xl mb-6">
-					مشاريعنا
-				</h1>
-				<div className="grid md:grid-cols-3 gap-8">
-					{projects.map((element: any, index) => (
-						<Project {...element} key={index} />
-					))}
+		<>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "Organization",
+						name: "مفازا",
+						url: "https://mafazaa.com",
+						logo: "https://mafazaa.com/logo.png",
+						description:
+							"مشروع دعوي إسلامي يهدف إلى خدمة الإسلام والمسلمين. إن الله ابتعثنا لنخرج العباد من عبادة العباد إلى عبادة رب العباد، ومن ضيق الدنيا إلى سعة الدنيا والآخرة، ومن جور الأديان إلى عدل الإسلام.",
+						mission:
+							"خدمة الإسلام والمسلمين من خلال مشاريع دعوية ومحتوى إسلامي هادف",
+						sameAs: [
+							"https://facebook.com/mafazaa.unite",
+							"https://youtube.com/@mafazaa_official",
+							"https://github.com/mafazaa-org/",
+						],
+						contactPoint: {
+							"@type": "ContactPoint",
+							email: "support@mafazaa.com",
+							contactType: "دعم فني",
+						},
+					}),
+				}}
+			/>
+			<main dir="rtl" className="min-h-screen">
+				<HeroSection {...heroData} />
+				<div className="relative">
+					<Form />
 				</div>
-			</section>
-			<FollowUs links={links} img1={img1} img2={img2} />
-			<Form />
-		</main>
+			</main>
+		</>
 	);
 }

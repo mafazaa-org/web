@@ -9,13 +9,16 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        cairo: ["Cairo", "sans-serif"],
+        tajawal: ["Tajawal", "sans-serif"],
+        cairo: ["Cairo", "sans-serif"], // Keep for backward compatibility
       },
       borderRadius: {
         rounded: "5px",
       },
       backgroundImage: {
         centerSectionBg: "url('/protect.png')",
+        "brand-gradient": "linear-gradient(135deg, #0d309e 0%, #60148c 100%)",
+        "brand-gradient-accent": "linear-gradient(135deg, #0d309e 0%, #18cad3 50%, #60148c 100%)",
       },
       colors: {
         primary: "#0d309e",
@@ -27,6 +30,9 @@ module.exports = {
         "dark-one": "#040e30",
         "dark-two": "#1d062a",
         test: "#34fe41",
+      },
+      animation: {
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
     },
   },

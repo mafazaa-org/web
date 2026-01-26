@@ -28,6 +28,5 @@ export async function POST(req: NextRequest) {
 		`redirectMethod=get&` +
 		`brandColor=%23ffe600&` +
 		`display=ar`;
-	console.log(url);
 	redirect(url, RedirectType.replace);
 }

@@ -1,62 +1,30 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Header, Footer } from "mafazaa-react-ui";
-import logo from "@/public/logo/svg/logo_dark.svg";
+import { Header } from "mafazaa-react-ui";
+import CustomFooter from "@/components/CustomFooter";
+import headerLogo from "@/assets/الشعار/الشعار/3مفازا.png";
+import footerLogo from "@/assets/الشعار/اللوجو/32مفازا.png";
+import { headerConfig, footerConfig } from "./siteConfig";
 import "./globals.css";
-import { usePathname } from "next/navigation"; // Import usePathname
+import { usePathname } from "next/navigation";
 
-type LinksTypes = {
-  socialLinks: {
-    href: string;
-    src: string;
-    text: string;
-  }[];
-  importantLinks: {
-    href: string;
-    text: string;
-  }[];
-};
 export default function RootTemplate({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  const [links, setLinks] = useState<LinksTypes>();
-  const [projects, setProjects] = useState([]);
-  const [loaded, setLoaded] = useState(false);
-  const pathname = usePathname(); // Get the current route
+	const pathname = usePathname();
+	const excludeHeaderFooter = pathname === "/join";
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [projectsResponse, linksResponse] = await Promise.all([
-          fetch(`${process.env.NEXT_PUBLIC_API_HOST}/global/projects`),
-          fetch(`${process.env.NEXT_PUBLIC_API_HOST}/global/links`),
-        ]);
-
-        setProjects(await projectsResponse.json());
-        setLinks(await linksResponse.json());
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        setLoaded(true);
-      }
-    };
-
-    fetchData();
-  }, []);
-  const excludeHeaderFooter = pathname === "/join";
-
-  return (
-    loaded && (
-      <>
-        {!excludeHeaderFooter && <Header links={links} logo={logo} />}
-        {children}
-        {!excludeHeaderFooter && (
-          <Footer links={links} logo={logo} projects={projects} />
-        )}
-      </>
-    )
-  );
+	return (
+		<>
+			{!excludeHeaderFooter && (
+				<Header links={headerConfig} logo={headerLogo} />
+			)}
+			{children}
+			{!excludeHeaderFooter && (
+				<CustomFooter links={footerConfig} logo={footerLogo} />
+			)}
+		</>
+	);
 }
