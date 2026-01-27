@@ -1,6 +1,5 @@
 "use client";
 
-import { Form } from "mafazaa-react-ui";
 import HeroSection from "@/components/HeroSection";
 import type { HeroSectionProps } from "@/types/index";
 import "./globals.css";
@@ -8,8 +7,7 @@ import "./globals.css";
 export default function Home() {
 	const heroData: HeroSectionProps = {
 		textColor: "#f2f2f2",
-		description:
-			"إن الله ابتعثنا لنخرج العباد من عبادة العباد إلى عبادة رب العباد،\nومن ضيق الدنيا إلى سعة الدنيا والآخرة، ومن جور الأديان إلى عدل الإسلام",
+		description:"نحن قومٌ أعزنا الله بالإسلام، فإن ابتغينا العزة في غيره أذلنا الله",
 		buttons: [],
 	};
 
@@ -43,9 +41,7 @@ export default function Home() {
 			/>
 			<main dir="rtl" className="min-h-screen">
 				<HeroSection {...heroData} />
-				<div className="relative">
-					<Form />
-				</div>
+			
 			</main>
 		</>
 	);

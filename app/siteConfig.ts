@@ -1,15 +1,10 @@
-import facebookIcon from "@/assets/facebook.svg";
 import githubIcon from "@/assets/github.svg";
-import instagramIcon from "@/assets/instagram.svg";
 import youtubeIcon from "@/assets/youtube.svg";
-import whatsappIcon from "@/assets/whatsapp.svg";
-import mailIcon from "@/assets/mail.svg";
 import type {
-	SocialLink,
-	ImportantLink,
 	HeaderConfig,
 	FooterConfig,
 } from "@/types/index";
+
 export const headerConfig: HeaderConfig = {
 	socialLinks: [
 
@@ -19,8 +14,6 @@ export const headerConfig: HeaderConfig = {
 			text: "YouTube",
 		},
 
-
-
 		{
 			href: "https://github.com/mafazaa-org/",
 			src: githubIcon,
@@ -28,14 +21,15 @@ export const headerConfig: HeaderConfig = {
 		},
 	],
 	importantLinks: [
-		{
-			href: "/contact",
-			text: "تواصل معنا",
-		},
+
 		{
 			href: "/support_us",
 			text: "ادعمنا",
 		},
+		{
+			href: "/manhaj",
+			text: "المنهج"
+		}
 	],
 };
 
@@ -54,14 +48,15 @@ export const footerConfig: FooterConfig = {
 		},
 	],
 	importantLinks: [
-		{
-			href: "/contact",
-			text: "تواصل معنا",
-		},
+
 		{
 			href: "/support_us",
 			text: "ادعمنا",
 		},
+		{
+			href: "/manhaj",
+			text: "المنهج"
+		}
 
 	],
 	supportEmail: "support@mafazaa.com",

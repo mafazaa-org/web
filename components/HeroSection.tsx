@@ -71,7 +71,7 @@ export default function HeroSection({
 			<div className="relative z-10 px-4 md:px-10 lg:px-32 py-20 text-center max-w-6xl">
 				<div className="space-y-8 lg:space-y-12">
 					<p
-						className="text-2xl md:text-3xl lg:text-5xl xl:text-6xl leading-relaxed whitespace-pre-line font-bold"
+						className="text-2xl md:text-3xl lg:text-5xl xl:text-6xl leading-relaxed whitespace-pre-line  font-bold"
 						style={{ color: textColor }}
 					>
 						{description}

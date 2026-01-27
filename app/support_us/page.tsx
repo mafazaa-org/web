@@ -1,6 +1,4 @@
 "use client";
-
-import { useState, useEffect } from "react";
 import fundImage from "@/assets/coins.jpg";
 
 const SupportUsPage = () => {
@@ -61,22 +59,12 @@ const SupportUsPage = () => {
 					</div>
 				{/* Content */}
 				<div className="relative z-10 w-full max-w-4xl mx-auto p-7 text-center space-y-12">
-					{/* Quote Section */}
-					<div className="space-y-6">
-						<div className="inline-block px-6 py-2 bg-accent-color/20 border border-accent-color/50 rounded-full mb-4">
-							<p className="text-accent-color text-sm font-semibold">
-								عمر بن الخطاب رضي الله عنه
-							</p>
-						</div>
-						<blockquote className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-bright-one leading-relaxed">
-							نحن قومٌ أعزنا الله بالإسلام، فإن ابتغينا العزة في غيره أذلنا الله
-						</blockquote>
-					</div>
+				
 
 					{/* Description */}
 					<div className="max-w-2xl mx-auto">
-						<p className="text-xl md:text-2xl lg:text-3xl text-bright-two leading-relaxed">
-							هذا باب الدعم المادي مفتوح إن توسمت في هذا المشروع خيرا و رأيت فعلا أنه يعين على إعادة إحياء هذه الأمة
+						<p className="text-xl md:text-2xl lg:text-3xl text-bright-two leading-relaxed font-bold">
+							هذا باب الدعم المادي مفتوح إن توسمت في هذا المشروع خيرا و رأيت أنه حقا يعين على إعادة إحياء هذه الأمة
 						</p>
 					</div>
 
