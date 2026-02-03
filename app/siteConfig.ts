@@ -28,7 +28,7 @@ export const headerConfig: HeaderConfig = {
 		},
 		{
 			href: "/manhaj",
-			text: "المنهج"
+			text: "منهج مقترح"
 		}
 	],
 };
@@ -55,7 +55,7 @@ export const footerConfig: FooterConfig = {
 		},
 		{
 			href: "/manhaj",
-			text: "المنهج"
+			text: "منهج مقترح"
 		}
 
 	],
