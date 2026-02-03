@@ -7,8 +7,9 @@ import "./globals.css";
 export default function Home() {
 	const heroData: HeroSectionProps = {
 		textColor: "#f2f2f2",
-		description:"نحن قومٌ أعزنا الله بالإسلام، فإن ابتغينا العزة في غيره أذلنا الله",
-		buttons: [],
+		description:"نسعى لبناء مجتمع أقرب ما يكون من جيل الصحابة رضوان الله عليهم، و تمكين الإسلام في الأرض",
+		buttons: [
+			],
 	};
 
 	return (

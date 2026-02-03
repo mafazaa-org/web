@@ -29,7 +29,7 @@ function Header({
 
   return (
     <header
-      className={`flex md:grid grid-cols-9 items-center justify-between md:justify-items-center px-6 py-4 md:px-12 lg:px-32 fixed top-0 w-full z-20 transition-colors duration-300 h-16 md:h-20 lg:h-24 bg-transparent`}
+      className={`flex md:grid grid-cols-9 items-center justify-between md:justify-items-center px-6 py-4 md:px-12 lg:px-32 fixed top-0 w-full z-20 transition-colors duration-300 h-16 md:h-20 lg:h-24 ${isScrolled ? "bg-dark-one" : "bg-transparent"}`}
     >
       <ul
         className={`hidden md:flex justify-start items-center gap-6 w-full col-span-3`}
@@ -76,7 +76,9 @@ function Header({
           alt="logo"
           width={143}
           height={67}
-          className="max-lg:w-[67px] max-lg:h-[32px] object-contain "
+          className={`max-lg:w-[67px] max-lg:h-[32px] object-contain transition-transform duration-300 ${
+            isScrolled ? "scale-[0.33]" : "scale-100"
+          }`}
         />
       </Link>
       <ul

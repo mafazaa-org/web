@@ -10,7 +10,7 @@ const tajawal = Tajawal({
 
 export const metadata: Metadata = {
 	title: {
-		default: "مفازا - مشروع دعوي إسلامي | رؤية ورسالة إسلامية",
+		default: "مفازا - إعادة إحياء أمة",
 		template: "%s | مفازا",
 	},
 	description:
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 		locale: "ar_SA",
 		url: "https://mafazaa.com",
 		siteName: "مفازا",
-		title: "مفازا - مشروع دعوي إسلامي | رؤية ورسالة إسلامية",
+		title: "مفازا - إعادة إحياء أمة",
 		description:
 			"مشروع دعوي إسلامي يهدف إلى خدمة الإسلام والمسلمين. إن الله ابتعثنا لنخرج العباد من عبادة العباد إلى عبادة رب العباد، ومن ضيق الدنيا إلى سعة الدنيا والآخرة، ومن جور الأديان إلى عدل الإسلام.",
 		images: [
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "مفازا - مشروع دعوي إسلامي | رؤية ورسالة إسلامية",
+		title: "مفازا - إعادة إحياء أمة",
 		description:
 			"مشروع دعوي إسلامي يهدف إلى خدمة الإسلام والمسلمين. نوفر محتوى إسلامي هادف، مواد علمية، وفرص عمل للشباب.",
 		images: ["https://mafazaa.com/twitter-image.jpg"],
