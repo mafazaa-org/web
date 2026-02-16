@@ -7,7 +7,7 @@ import "./globals.css";
 export default function Home() {
 	const heroData: HeroSectionProps = {
 		textColor: "#f2f2f2",
-		description:"نسعى لبناء مجتمع أقرب ما يكون من جيل الصحابة رضوان الله عليهم، و تمكين الإسلام في الأرض",
+		description:"نسعى لبناء مجتمع أقرب ما يكون من جيل الصحابة رضوان الله عليهم",
 		buttons: [
 			],
 	};
